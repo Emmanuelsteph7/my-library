@@ -1,0 +1,132 @@
+@use "./functions" as *;
+@use "./mixins" as *;
+
+.btn {
+  border: 1px solid color(mainColorDark);
+  outline: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  color: color(lightBg);
+  cursor: pointer;
+  background-color: color(mainColorDark);
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background-color: color(lightBg);
+    color: color(mainColorDark);
+    border: 1px solid color(mainColorDark);
+  }
+}
+
+.btn--md {
+  @extend .btn;
+
+  padding: 0.7rem 1.5rem;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.form {
+  width: 50%;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 0 3px rgba(61, 59, 59, 0.3);
+  padding: 2rem 1rem;
+  border-radius: 5px;
+
+  @include maxWidth(767px) {
+    width: 70%;
+  }
+
+  @include maxWidth(575px) {
+    width: 90%;
+  }
+}
+
+.header1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+  font-family: "Josefin Sans", sans-serif;
+  color: color(darkPink);
+
+  @include minWidth(768px) {
+    font-size: 3.5rem;
+  }
+}
+
+.header2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.5;
+  font-family: "Josefin Sans", sans-serif;
+  color: color(darkPink);
+
+  @include minWidth(768px) {
+    font-size: 2.25rem;
+  }
+}
+
+.header3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+  font-family: "Josefin Sans", sans-serif;
+  color: color(darkPink);
+
+  @include minWidth(768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.header4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5;
+  font-family: "Josefin Sans", sans-serif;
+
+  @include minWidth(768px) {
+    font-size: 1.25rem;
+  }
+}
+
+.sectionHeader {
+  @extend .header2;
+
+  width: fit-content;
+  margin: 0 auto 30px;
+}
+
+.subHeader {
+  @extend .header4;
+
+  color: color(textColor);
+  width: fit-content;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+.header5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.75;
+}
+
+.normal {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+  @include minWidth(768px) {
+    font-size: 1rem;
+  }
+}
+
+.small {
+  font-size: 0.8rem;
+  font-weight: 400;
+}

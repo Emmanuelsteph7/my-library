@@ -1,0 +1,36 @@
+@use "styles" as *;
+@use "../abstract/mixins";
+@use "../abstract/helpers";
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+  -webkit-tap-highlight-color: transparent; // to remove the bluish background on click
+}
+
+html {
+  font-size: 16px;
+
+  @include maxWidth(767px) {
+    font-size: 14px;
+  }
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  background-color: color(lightBg);
+  color: color(mainColorDark);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}

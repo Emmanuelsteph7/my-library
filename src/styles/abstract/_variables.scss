@@ -1,0 +1,48 @@
+$colors2: (
+  bgDark: #10121a,
+  borderColor: #2e344e,
+  primaryColor: #007bff,
+  secondaryColor: #6c757d,
+  white: #ffffff,
+  fontLightColor: #a4acc4,
+  fontDarkColor: #313131,
+  fontDarkColor2: #151515,
+  sidebarDarkColor: #191d2b,
+);
+
+$colors: (
+  "mainColor": #3e0e12,
+  "mainColorDark": #2f0a0d,
+  "textColor": #524748,
+  "firstColorLight": #7b6f71,
+  "lightBg": #fbf9f9,
+  "white": #ffffff,
+);
+
+$colors-dark: (
+  "bgDark": #10121a,
+  "borderColor": #2e344e,
+  "primaryColor": #007bff,
+  "secondaryColor": #6c757d,
+  "white": #ffffff,
+  "fontLightColor": #a4acc4,
+  "fontDarkColor": #313131,
+  "fontDarkColor2": #151515,
+  "sidebarDarkColor": map-get($colors, fontLightColor),
+);
+
+:root {
+  @each $name, $value in $colors {
+    --#{$name}: #{$value};
+  }
+  --theme: "light";
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @each $name, $value in $colors-dark {
+      --#{$name}: #{$value};
+    }
+    --theme: "dark";
+  }
+}

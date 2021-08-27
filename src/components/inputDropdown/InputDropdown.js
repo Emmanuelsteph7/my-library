@@ -1,0 +1,47 @@
+// This input field is for select type (dropdown)
+const InputDropdown = ({ name, id, data, placeholder, value, onChange }) => {
+  const mappedData = data ? (
+    data.map((item) => {
+      return (
+        <option
+          className="formGroup__option"
+          key={item.value}
+          value={item.value}
+        >
+          {item.value}
+        </option>
+      );
+    })
+  ) : (
+    <option className="formGroup__option" value="">
+      No Option
+    </option>
+  );
+
+  const handleChange = (e) => {
+    if (onChange) {
+      return onChange(e.target.value);
+    }
+
+    return null;
+  };
+
+  return (
+    <div className="formGroup">
+      <select
+        value={value}
+        onChange={handleChange}
+        className="formGroup__select"
+        name={name}
+        id={id}
+      >
+        <option className="formGroup__option" value="">
+          {placeholder ? placeholder : "Please Select"}
+        </option>
+        {mappedData}
+      </select>
+    </div>
+  );
+};
+
+export default InputDropdown;
