@@ -1,0 +1,34 @@
+.singleSlider {
+  height: 100%;
+  width: 100%;
+
+  .singleSlider__container {
+    position: relative;
+    height: 100%;
+  }
+
+  .singleSlider__imageDiv {
+    height: 100%;
+    display: flex;
+  }
+
+  .singleSlider__image {
+    width: 100%;
+  }
+
+  .singleSlider__rightToggle,
+  .singleSlider__leftToggle {
+    position: absolute;
+    cursor: pointer;
+    font-size: 1.3rem;
+    top: 50%;
+  }
+
+  .singleSlider__rightToggle {
+    right: 10px;
+  }
+
+  .singleSlider__leftToggle {
+    left: 10px;
+  }
+}

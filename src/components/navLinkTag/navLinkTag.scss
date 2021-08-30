@@ -1,0 +1,27 @@
+@use "../../styles" as *;
+
+.navLinkTag {
+  text-decoration: none;
+  color: color(textColor);
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+
+  &:hover {
+    color: color(mainColor);
+
+    .navLinkTag__arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  .navLinkTag__label {
+    margin-right: 3px;
+  }
+
+  .navLinkTag__arrow {
+    font-size: 1.3rem;
+    transition: 0.4s;
+  }
+}

@@ -1,0 +1,15 @@
+.imageSlider {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+
+  .imageSlider__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transition: 0.3s;
+    display: flex;
+  }
+}

@@ -2,26 +2,31 @@
 @use "./mixins" as *;
 
 .btn {
-  border: 1px solid color(mainColorDark);
+  border: 1px solid color(mainColor);
   outline: none;
-  padding: 1rem 2rem;
+  padding: 0.7rem 2rem;
   border-radius: 5px;
   color: color(lightBg);
   cursor: pointer;
-  background-color: color(mainColorDark);
+  background-color: color(mainColor);
   transition: 0.3s ease-in-out;
 
   &:hover {
-    background-color: color(lightBg);
-    color: color(mainColorDark);
-    border: 1px solid color(mainColorDark);
+    background-color: darken(color(mainColor), 20%);
+    color: color(lightBg);
+    border: 1px solid darken(color(mainColor), 20%);
   }
 }
 
-.btn--md {
+.btn--outline {
   @extend .btn;
+  color: color(mainColor);
+  background-color: color(lightBg);
 
-  padding: 0.7rem 1.5rem;
+  &:hover {
+    color: color(lightBg);
+    background-color: color(mainColor);
+  }
 }
 
 .container {
@@ -30,22 +35,22 @@
   max-width: 1200px;
 }
 
-.form {
-  width: 50%;
-  max-width: 400px;
-  margin: 0 auto;
-  box-shadow: 0 0 3px rgba(61, 59, 59, 0.3);
-  padding: 2rem 1rem;
-  border-radius: 5px;
+// .form {
+//   width: 50%;
+//   max-width: 400px;
+//   margin: 0 auto;
+//   box-shadow: 0 0 3px rgba(61, 59, 59, 0.3);
+//   padding: 2rem 1rem;
+//   border-radius: 5px;
 
-  @include maxWidth(767px) {
-    width: 70%;
-  }
+//   @include maxWidth(767px) {
+//     width: 70%;
+//   }
 
-  @include maxWidth(575px) {
-    width: 90%;
-  }
-}
+//   @include maxWidth(575px) {
+//     width: 90%;
+//   }
+// }
 
 .header1 {
   font-size: 2.5rem;

@@ -1,3 +1,5 @@
+import "./inputDropdown.scss";
+
 // This input field is for select type (dropdown)
 const InputDropdown = ({ name, id, data, placeholder, value, onChange }) => {
   const mappedData = data ? (
@@ -20,14 +22,17 @@ const InputDropdown = ({ name, id, data, placeholder, value, onChange }) => {
 
   const handleChange = (e) => {
     if (onChange) {
-      return onChange(e.target.value);
+      return onChange((prev) => ({
+        ...prev,
+        [e.target.name]: e.target.value || e.target.checked,
+      }));
     }
 
     return null;
   };
 
   return (
-    <div className="formGroup">
+    <div className="formGroup formGroup--dropdown">
       <select
         value={value}
         onChange={handleChange}

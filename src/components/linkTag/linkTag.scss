@@ -1,0 +1,12 @@
+@use "../../styles" as *;
+
+.linkTag {
+  text-decoration: none;
+  color: color(textColor);
+  font-weight: 600;
+  transition: 0.3s;
+
+  &:hover {
+    color: color(mainColor);
+  }
+}

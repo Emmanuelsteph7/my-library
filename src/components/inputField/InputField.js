@@ -14,14 +14,17 @@ const InputField = ({
 }) => {
   const handleChange = (e) => {
     if (onChange) {
-      return onChange(e.target.value);
+      return onChange((prev) => ({
+        ...prev,
+        [e.target.name]: e.target.value || e.target.checked,
+      }));
     }
 
     return null;
   };
 
   return (
-    <div className="formGroup">
+    <div className="formGroup formGroup--input">
       {label && (
         <label htmlFor={id} className="formGroup__label">
           {label}

@@ -1,4 +1,6 @@
-const Button = ({ label, onClick, type }) => {
+import "./button.scss";
+
+const Button = ({ label, onClick, type, styleClass }) => {
   const handleClick = () => {
     if (onClick) {
       return onClick();
@@ -9,7 +11,7 @@ const Button = ({ label, onClick, type }) => {
   return (
     <button
       type={type ? type : "button"}
-      className="button"
+      className={`button btn ${styleClass ? styleClass : ""}`}
       onClick={handleClick}
     >
       {label}

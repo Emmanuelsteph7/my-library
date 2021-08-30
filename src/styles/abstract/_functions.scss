@@ -8,6 +8,6 @@
 //   @return map-get($font-weight, $weight);
 // }
 
-@function color($color-name) {
-  @return var(--#{$color-name});
+@function color($color) {
+  @return map-get($colors, $color);
 }

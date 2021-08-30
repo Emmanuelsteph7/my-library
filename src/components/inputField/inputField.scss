@@ -1,0 +1,26 @@
+.formGroup--input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  .formGroup__label {
+    margin-bottom: 4px;
+  }
+
+  .formGroup__input,
+  .formGroup__textarea {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #ddd;
+    outline: none;
+    width: 100%;
+    padding: 0.6rem;
+    box-sizing: border-box;
+    transition: 0.3s;
+
+    &:focus {
+      background-color: white;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
