@@ -4,12 +4,36 @@
   position: relative;
   overflow: hidden;
 
-  .imageSlider__container {
+  .imageSlider__container,
+  .imageSlider__container2 {
     position: absolute;
     top: 0;
-    left: 0;
     height: 100%;
-    transition: 0.3s;
+    transition: 1s;
     display: flex;
+  }
+
+  .imageSlider__rightToggle,
+  .imageSlider__leftToggle {
+    position: absolute;
+    cursor: pointer;
+    font-size: 1.3rem;
+    top: 50%;
+    z-index: 4;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cornflowerblue;
+    border-radius: 50%;
+  }
+
+  .imageSlider__rightToggle {
+    right: 10px;
+  }
+
+  .imageSlider__leftToggle {
+    left: 10px;
   }
 }

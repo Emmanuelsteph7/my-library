@@ -1,4 +1,5 @@
 import { useState } from "react";
+import img1 from "./assets/img1.jpg";
 import { Form, LinkTag, NavLinkTag, ImageSlider } from "./components";
 import { array1, array2, array3 } from "./data";
 import Home from "./pages/home/Home";
@@ -25,13 +26,13 @@ const App = () => {
 
   const array = [
     {
-      src: "/logo512.png",
+      src: img1,
     },
     {
       src: "/logo512.png",
     },
     {
-      src: "/logo512.png",
+      src: "/img1.jpg",
     },
     {
       src: "/logo512.png",
@@ -47,7 +48,11 @@ const App = () => {
         alignItems: "center",
       }}
     >
-      <Home />
+      {/* <Form data={array1} state={form1} stateFunc={setForm} />
+      <LinkTag label="Home" to="/home" />
+      <NavLinkTag label="Home" to="/home" />
+      <input type="date" name="" id="" /> */}
+      <ImageSlider data={array} />
     </div>
   );
 };
