@@ -25,7 +25,15 @@ const handleFormData = (data, state, stateFunc) => {
   return newArray;
 };
 
-const Form = ({ data, state, stateFunc }) => {
+const Form = ({
+  data,
+  state,
+  stateFunc,
+  width,
+  height,
+  maxWidth,
+  maxHeight,
+}) => {
   const newData = handleFormData(data, state, stateFunc);
 
   const mappedData = newData.map((item, key) => {
@@ -45,7 +53,30 @@ const Form = ({ data, state, stateFunc }) => {
 
     return <InputField key={key} {...item} />;
   });
-  return <form className="form">{mappedData}</form>;
+
+  let formStyle = {};
+
+  if (width) {
+    formStyle.width = width;
+  }
+
+  if (height) {
+    formStyle.height = height;
+  }
+
+  if (maxWidth) {
+    formStyle.maxWidth = maxWidth;
+  }
+
+  if (maxHeight) {
+    formStyle.maxHeight = maxHeight;
+  }
+
+  return (
+    <form className="form" style={formStyle}>
+      {mappedData}
+    </form>
+  );
 };
 
 export default Form;

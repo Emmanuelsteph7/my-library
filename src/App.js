@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Form, LinkTag, NavLinkTag, ImageSlider } from "./components";
 import { array1, array2, array3 } from "./data";
+import Home from "./pages/home/Home";
 
 const App = () => {
   const [form1, setForm] = useState({
@@ -46,11 +47,7 @@ const App = () => {
         alignItems: "center",
       }}
     >
-      {/* <Form data={array1} state={form1} stateFunc={setForm} />
-      <LinkTag label="Home" to="/home" />
-      <NavLinkTag label="Home" to="/home" />
-      <input type="date" name="" id="" /> */}
-      <ImageSlider width="600px" data={array} />
+      <Home />
     </div>
   );
 };
