@@ -51,7 +51,7 @@ const App = () => {
       <LinkTag label="Home" to="/home" />
       <NavLinkTag label="Home" to="/home" />
       <input type="date" name="" id="" /> */}
-      <ImageSlider data={array} />
+      {/* <ImageSlider data={array} /> */}
     </div>
   );
 };

@@ -1,0 +1,62 @@
+.alert {
+  margin-bottom: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  width: 250px;
+  animation: alertSlideIn 0.4s ease-in-out;
+
+  @keyframes alertSlideIn {
+    0% {
+      margin-left: 130%;
+    }
+    100% {
+      margin: 0;
+    }
+  }
+
+  @keyframes alertSlideOut {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin: 130%;
+    }
+  }
+
+  &.success {
+    background-color: rgb(146, 233, 146);
+
+    .alert__bar {
+      background-color: green;
+    }
+  }
+
+  &.error {
+    background-color: rgb(199, 63, 63);
+    color: white;
+
+    .alert__bar {
+      background-color: red;
+    }
+  }
+
+  &.exit {
+    animation: alertSlideOut 0.4s ease-in-out forwards;
+  }
+
+  .alert__icon {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+  }
+
+  .alert__message {
+    padding: 14px 10px 10px;
+  }
+
+  .alert__bar {
+    height: 5px;
+    background-color: green;
+  }
+}
