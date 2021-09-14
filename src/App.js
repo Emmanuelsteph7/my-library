@@ -2,6 +2,7 @@ import { useState } from "react";
 import img1 from "./assets/img1.jpg";
 import { Form, LinkTag, NavLinkTag, ImageSlider } from "./components";
 import { array1, array2, array3 } from "./data";
+import Home from "./pages/home/Home";
 
 const App = () => {
   const [form1, setForm] = useState({
