@@ -1,43 +1,21 @@
-import { useState } from "react";
+import { useRef } from "react";
+import { useContext, useEffect, useState } from "react";
+import { v4 } from "uuid";
 import img1 from "./assets/img1.jpg";
-import { Form, LinkTag, NavLinkTag, ImageSlider } from "./components";
+import { Form, LinkTag, NavLinkTag, ImageSlider, Modal } from "./components";
+import {
+  useSuccessAlert,
+  useErrorAlert,
+} from "./components/alert/AlertContext";
 import { array1, array2, array3 } from "./data";
 import Home from "./pages/home/Home";
 
 const App = () => {
-  const [form1, setForm] = useState({
-    fullName: "",
-    email: "",
-    password: "",
-    gender: "",
-    message: "",
-  });
+  const modalRef = useRef();
 
-  const [form2, setForm2] = useState({
-    email: "",
-    password: "",
-    agree: true,
-  });
-
-  const [form3, setForm3] = useState({
-    username: "",
-    password: "",
-  });
-
-  const array = [
-    {
-      src: img1,
-    },
-    {
-      src: "/logo512.png",
-    },
-    {
-      src: "/img1.jpg",
-    },
-    {
-      src: "/logo512.png",
-    },
-  ];
+  const close = () => {
+    modalRef.current.closeModal();
+  };
 
   return (
     <div
@@ -48,12 +26,21 @@ const App = () => {
         alignItems: "center",
       }}
     >
-      {/* <Form data={array1} state={form1} stateFunc={setForm} />
-      <LinkTag label="Home" to="/home" />
-      <NavLinkTag label="Home" to="/home" />
-      <input type="date" name="" id="" /> */}
-      {/* <ImageSlider data={array} /> */}
+      <button onClick={() => modalRef.current.openModal()}>Open Modal</button>
+      <Modal ref={modalRef}>
+        <ModalBody closeFunc={() => modalRef.current.closeModal()} />
+      </Modal>
     </div>
+  );
+};
+
+const ModalBody = ({ closeFunc }) => {
+  return (
+    <>
+      <h1>Header</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quae.</p>
+      <button onClick={closeFunc}>close modal</button>
+    </>
   );
 };
 

@@ -1,0 +1,58 @@
+@use "styles" as *;
+
+.hamburger {
+  @include minWidth(992px) {
+    display: none;
+  }
+
+  &.show {
+    .hamburger__toggleIcon {
+      &:nth-child(1) {
+        transform: rotate(405deg) translate(9px, 7px);
+
+        @include maxWidth(575px) {
+          transform: rotate(405deg) translate(7px, 7px);
+        }
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-405deg) translate(6px, -4px);
+
+        @include maxWidth(575px) {
+          transform: rotate(-405deg) translate(5px, -5px);
+        }
+      }
+    }
+  }
+
+  .hamburger__container {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+
+    @include maxWidth(575px) {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .hamburger__toggleIcon {
+    width: 75%;
+    margin: 4px 0;
+    height: 1px;
+    background-color: color(mainColorDark);
+    transition: 0.3s ease-in-out;
+
+    &:nth-child(2) {
+      width: 100%;
+    }
+  }
+}

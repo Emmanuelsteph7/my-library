@@ -1,7 +1,7 @@
-import Button from "../button/Button";
-import CheckBox from "../checkBox/CheckBox";
-import InputDropdown from "../inputDropdown/InputDropdown";
-import InputField from "../inputField/InputField";
+import Button from "./modules/button/Button";
+import CheckBox from "./modules/checkBox/CheckBox";
+import InputDropdown from "./modules/inputDropdown/InputDropdown";
+import InputField from "./modules/inputField/InputField";
 import "./form.scss";
 
 const handleFormData = (data, state, stateFunc) => {

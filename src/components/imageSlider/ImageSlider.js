@@ -45,10 +45,9 @@ const ImageSlider = ({ data, width, height }) => {
       }
       setState(state + 1);
     }, 4000);
-    console.log(toggleDivArray);
 
     return () => clearInterval(timer);
-  }, [state]);
+  }, [state, data.length]);
 
   const newData = handleSlider(data, state, setState);
 
@@ -129,48 +128,48 @@ const ImageSlider = ({ data, width, height }) => {
   );
 };
 
-const ImageSlider2 = ({ data, width, height }) => {
-  const [state, setState] = useState(1);
+// const ImageSlider2 = ({ data, width, height }) => {
+//   const [state, setState] = useState(1);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      if (state === data.length) {
-        return setState(1);
-      }
-      setState(state + 1);
-    }, 4000);
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       if (state === data.length) {
+//         return setState(1);
+//       }
+//       setState(state + 1);
+//     }, 4000);
 
-    return () => clearInterval(timer);
-  }, [state]);
+//     return () => clearInterval(timer);
+//   }, [state]);
 
-  const newData = handleSlider(data, state, setState);
+//   const newData = handleSlider(data, state, setState);
 
-  const mapped = newData.map((item, key) => {
-    return <SingleSlider key={key} {...item} />;
-  });
+//   const mapped = newData.map((item, key) => {
+//     return <SingleSlider key={key} {...item} />;
+//   });
 
-  let style = {};
-  if (width) {
-    style.width = width;
-  }
+//   let style = {};
+//   if (width) {
+//     style.width = width;
+//   }
 
-  if (height) {
-    style.height = height;
-  }
+//   if (height) {
+//     style.height = height;
+//   }
 
-  return (
-    <div className="imageSlider" style={style}>
-      <div
-        className="imageSlider__container"
-        style={{
-          width: `${100 * newData.length}%`,
-          left: `${-100 * (state - 1)}%`,
-        }}
-      >
-        {mapped}
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div className="imageSlider" style={style}>
+//       <div
+//         className="imageSlider__container"
+//         style={{
+//           width: `${100 * newData.length}%`,
+//           left: `${-100 * (state - 1)}%`,
+//         }}
+//       >
+//         {mapped}
+//       </div>
+//     </div>
+//   );
+// };
 
 export default ImageSlider;

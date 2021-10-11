@@ -1,4 +1,3 @@
-import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import "./singleSlider.scss";
 
 const SingleSlider = ({ src, width }) => {

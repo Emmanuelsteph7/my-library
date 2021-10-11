@@ -1,0 +1,38 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+
+  &.show {
+    display: block;
+  }
+
+  .modal__backdrop {
+    position: inherit;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 99;
+  }
+
+  .modal__box {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    min-width: 40%;
+    height: fit-content;
+    min-height: 40%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    padding: 20px;
+    overflow-y: auto;
+  }
+}
