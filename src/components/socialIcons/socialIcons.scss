@@ -1,0 +1,19 @@
+@use "styles" as *;
+
+.socialIcons {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: color(mainColorDark);
+  box-shadow: 0 0 5px color(mainColorDark);
+  font-size: 1.2rem;
+  transition: 0.3s ease-in;
+
+  &:hover {
+    background-color: color(mainColorDark);
+    color: color(lightBg);
+  }
+}

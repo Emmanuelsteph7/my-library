@@ -1,22 +1,8 @@
-import { useRef } from "react";
-import { useContext, useEffect, useState } from "react";
-import { v4 } from "uuid";
-import img1 from "./assets/img1.jpg";
-import { Form, LinkTag, NavLinkTag, ImageSlider, Modal } from "./components";
-import {
-  useSuccessAlert,
-  useErrorAlert,
-} from "./components/alert/AlertContext";
-import { array1, array2, array3 } from "./data";
-import Home from "./pages/home/Home";
+import { FaChevronRight } from "react-icons/fa";
+import { Button, Hamburger } from "./components";
 
 const App = () => {
-  const modalRef = useRef();
-
-  const close = () => {
-    modalRef.current.closeModal();
-  };
-
+  const alertz = () => alert("ok");
   return (
     <div
       className="App"
@@ -24,12 +10,11 @@ const App = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        height: "100vh",
       }}
     >
-      <button onClick={() => modalRef.current.openModal()}>Open Modal</button>
-      <Modal ref={modalRef}>
-        <ModalBody closeFunc={() => modalRef.current.closeModal()} />
-      </Modal>
+      <Button onClick={alertz} label="Proceed" icon={<FaChevronRight />} />
+      <Hamburger />
     </div>
   );
 };

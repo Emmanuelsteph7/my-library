@@ -11,6 +11,7 @@ import AlertProvider, {
   useSuccessAlert,
 } from "./alert/AlertContext";
 import Modal from "./modal/Modal";
+import Hamburger from "./hamburger/Hamburger";
 
 export {
   InputField,
@@ -25,4 +26,5 @@ export {
   useErrorAlert,
   useSuccessAlert,
   Modal,
+  Hamburger,
 };

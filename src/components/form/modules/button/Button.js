@@ -1,6 +1,13 @@
 import "./button.scss";
 
-const Button = ({ label, onClick, type, styleClass }) => {
+const Button = ({
+  label,
+  icon,
+  disabled,
+  onClick,
+  type = "button",
+  outline,
+}) => {
   const handleClick = () => {
     if (onClick) {
       return onClick();
@@ -8,13 +15,20 @@ const Button = ({ label, onClick, type, styleClass }) => {
 
     return null;
   };
+
+  let extraClass = icon && !label ? "icon" : icon && label ? "iconLabel" : "";
+
   return (
     <button
-      type={type ? type : "button"}
-      className={`button btn ${styleClass ? styleClass : ""}`}
+      type={type}
+      className={`button ${disabled ? "disabled" : ""} ${extraClass} ${
+        outline ? "button--outline" : ""
+      }`}
       onClick={handleClick}
+      disabled={disabled}
     >
-      {label}
+      {label && label}
+      {icon && icon}
     </button>
   );
 };
