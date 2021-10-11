@@ -6,6 +6,7 @@ import Form from "./form/Form";
 import LinkTag from "./linkTag/LinkTag";
 import NavLinkTag from "./navLinkTag/NavLinkTag";
 import ImageSlider from "./imageSlider/ImageSlider";
+import Hamburger from "./hamburger/Hamburger";
 
 export {
   InputField,
@@ -16,4 +17,5 @@ export {
   LinkTag,
   NavLinkTag,
   ImageSlider,
+  Hamburger,
 };
