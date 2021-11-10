@@ -40,14 +40,14 @@ const Pagination = ({
     for (let i = 0; i < paginationIcons.length; i++) {
       paginationIcons[i].classList.remove("active");
 
-      if (paginationIcons[i].innerHTML == currentPage + 1) {
+      if (Number(paginationIcons[i].innerHTML) === currentPage + 1) {
         paginationIcons[i].classList.add("active");
       }
     }
   };
 
   const prevPagination = () => {
-    if (currentPage === 1) {
+    if (currentPage <= 1) {
       return currentPageFunc((current) => current - 0);
     }
     currentPageFunc((current) => current - 1);
@@ -57,7 +57,7 @@ const Pagination = ({
     for (let i = 0; i < paginationIcons.length; i++) {
       paginationIcons[i].classList.remove("active");
 
-      if (paginationIcons[i].innerHTML == currentPage - 1) {
+      if (Number(paginationIcons[i].innerHTML) === currentPage - 1) {
         paginationIcons[i].classList.add("active");
       }
     }
@@ -69,15 +69,13 @@ const Pagination = ({
         <BsArrowLeft />
         <span className="pagination__nextText">Prev</span>
       </div>
-      {pageNumbers != undefined &&
+      {pageNumbers !== undefined &&
         pageNumbers.map((number) => {
           return (
             <div
               onClick={(e) => handlePagination(e, number)}
               key={number}
-              className={`pagination__page ${number === 1 ? "active" : ""} ${
-                dot ? "dot" : ""
-              }`}
+              className={`pagination__page ${number === 1 ? "active" : ""} `}
               datanumber={number}
             >
               {number}

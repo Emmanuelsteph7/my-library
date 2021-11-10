@@ -1,4 +1,4 @@
-@use "styles" as *;
+@use "../../styles" as *;
 
 /**************************************
 Start: Styles for pagination component
@@ -21,7 +21,7 @@ Start: Styles for pagination component
     border-radius: 50%;
 
     &.active {
-      color: $deepBlue;
+      // color: $deepBlue;
       background-color: rgba(0, 76, 255, 0.1);
     }
 
@@ -31,7 +31,7 @@ Start: Styles for pagination component
       color: transparent;
       margin-right: 15px;
       border-radius: 50%;
-      background-color: lighten(color(blue), 30%);
+      // background-color: lighten(color(blue), 30%);
       cursor: pointer;
       overflow: hidden;
       font-size: 0px;
@@ -62,12 +62,12 @@ Start: Styles for pagination component
       transform: translateX(10px);
 
       svg {
-        color: $deepBlue;
+        // color: $deepBlue;
       }
 
       .pagination__nextText {
         opacity: 1;
-        color: $deepBlue;
+        // color: $deepBlue;
       }
     }
 
