@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import "./alert.scss";
 
@@ -30,7 +30,7 @@ const Alert = ({ message, type, dispatch, id }) => {
     clearInterval(intervalId);
   };
 
-  const handleCloseTimer = () => {
+  const handleCloseTimer = useCallback(() => {
     clearInterval(intervalId);
     setExit(true);
     setTimeout(() => {
@@ -39,7 +39,7 @@ const Alert = ({ message, type, dispatch, id }) => {
         id,
       });
     }, 500);
-  };
+  }, [dispatch, id, intervalId]);
 
   useEffect(() => {
     if (width === 100) {

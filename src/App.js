@@ -1,8 +1,20 @@
+import { useEffect } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { Button, Hamburger } from "./components";
+import { useFetch } from "./utils";
 
 const App = () => {
   const alertz = () => alert("ok");
+  const { handleFetch, loading, data, error } = useFetch();
+
+  useEffect(() => {
+    handleFetch("https://jsonplaceholder.typicode.com/posts");
+  }, [handleFetch]);
+
+  console.log(loading);
+  console.log(data);
+  console.log(error);
+
   return (
     <div
       className="App"
@@ -16,16 +28,6 @@ const App = () => {
       <Button onClick={alertz} label="Proceed" icon={<FaChevronRight />} />
       <Hamburger />
     </div>
-  );
-};
-
-const ModalBody = ({ closeFunc }) => {
-  return (
-    <>
-      <h1>Header</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quae.</p>
-      <button onClick={closeFunc}>close modal</button>
-    </>
   );
 };
 

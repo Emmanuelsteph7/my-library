@@ -6,7 +6,7 @@ const useFetch = () => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
-  const handleQuery = async (method = "get", url, body, config) => {
+  const handleFetch = async (method = "get", url, body, config) => {
     setLoading(true);
 
     try {
@@ -28,7 +28,7 @@ const useFetch = () => {
     loading,
     data,
     error,
-    handleQuery,
+    handleFetch,
   };
 };
 
