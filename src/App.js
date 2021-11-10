@@ -8,8 +8,8 @@ const App = () => {
   const { handleFetch, loading, data, error } = useFetch();
 
   useEffect(() => {
-    handleFetch("https://jsonplaceholder.typicode.com/posts");
-  }, [handleFetch]);
+    handleFetch("get", "https://jsonplaceholder.typicode.com/posts");
+  }, []);
 
   console.log(loading);
   console.log(data);
