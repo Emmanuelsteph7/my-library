@@ -1,5 +1,4 @@
-import { BsArrowRight } from "react-icons/bs";
-import propTypes from "prop-types";
+import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import "./pagination.scss";
 
 // for how to use this component, check src/layouts/dashboard/projects/allProjects/components/allprojectsSection/AllProjectsSection.js
@@ -9,7 +8,6 @@ const Pagination = ({
   currentPageFunc,
   dataLength,
   postsPerPage,
-  dot,
 }) => {
   const pageNumbers = [];
 
@@ -29,10 +27,6 @@ const Pagination = ({
     });
 
     e.target.classList.add("active");
-
-    if (!dot) {
-      window.scrollTo(0, 200);
-    }
   };
 
   const nextPagination = () => {
@@ -50,11 +44,31 @@ const Pagination = ({
         paginationIcons[i].classList.add("active");
       }
     }
-    window.scrollTo(0, 200);
+  };
+
+  const prevPagination = () => {
+    if (currentPage === 1) {
+      return currentPageFunc((current) => current - 0);
+    }
+    currentPageFunc((current) => current - 1);
+
+    let paginationIcons = document.querySelectorAll(".pagination__page");
+
+    for (let i = 0; i < paginationIcons.length; i++) {
+      paginationIcons[i].classList.remove("active");
+
+      if (paginationIcons[i].innerHTML == currentPage - 1) {
+        paginationIcons[i].classList.add("active");
+      }
+    }
   };
 
   return (
     <div className="pagination">
+      <div className="pagination__prev" onClick={prevPagination}>
+        <BsArrowLeft />
+        <span className="pagination__nextText">Prev</span>
+      </div>
       {pageNumbers != undefined &&
         pageNumbers.map((number) => {
           return (
@@ -70,7 +84,11 @@ const Pagination = ({
             </div>
           );
         })}
-      {dot ? null : (
+      <div className="pagination__next" onClick={nextPagination}>
+        <span className="pagination__nextText">Next</span>
+        <BsArrowRight />
+      </div>
+      {/* {dot ? null : (
         <>
           <div className="pagination__dot"></div>
           <div className="pagination__dot"></div>
@@ -82,17 +100,9 @@ const Pagination = ({
             <span className="pagination__nextText">Next</span>
           </div>
         </>
-      )}
+      )} */}
     </div>
   );
-};
-
-Pagination.propTypes = {
-  postsPerPage: propTypes.any,
-  dataLength: propTypes.any,
-  currentPage: propTypes.any,
-  currentPageFunc: propTypes.any,
-  dot: propTypes.any,
 };
 
 export default Pagination;
