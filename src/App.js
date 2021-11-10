@@ -1,32 +1,46 @@
 import { useEffect } from "react";
-import { FaChevronRight } from "react-icons/fa";
-import { Button, Hamburger } from "./components";
+import { Pagination } from "./components";
 import { useFetch } from "./utils";
+import usePagination from "./utils/hooks/usePagination";
 
 const App = () => {
-  const alertz = () => alert("ok");
-  const { handleFetch, loading, data, error } = useFetch();
+  const { handleFetch, loading, data } = useFetch();
+
+  const { slicedPosts, currentPage, setCurrentPage, numOfPagePosts } =
+    usePagination({
+      data,
+    });
 
   useEffect(() => {
     handleFetch("get", "https://jsonplaceholder.typicode.com/posts");
-  }, []);
-
-  console.log(loading);
-  console.log(data);
-  console.log(error);
+  }, [handleFetch]);
 
   return (
     <div
       className="App"
       style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
         height: "100vh",
       }}
     >
-      <Button onClick={alertz} label="Proceed" icon={<FaChevronRight />} />
-      <Hamburger />
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <>
+          {slicedPosts &&
+            slicedPosts.map((item) => (
+              <div key={item.id}>
+                <h1>{item.title}</h1>
+                <p>{item.body}</p>
+              </div>
+            ))}
+          <Pagination
+            currentPage={currentPage}
+            currentPageFunc={setCurrentPage}
+            dataLength={data?.length}
+            postsPerPage={numOfPagePosts}
+          />
+        </>
+      )}
     </div>
   );
 };

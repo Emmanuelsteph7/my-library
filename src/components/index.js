@@ -12,6 +12,7 @@ import AlertProvider, {
 } from "./alert/AlertContext";
 import Modal from "./modal/Modal";
 import Hamburger from "./hamburger/Hamburger";
+import Pagination from "./pagination/Pagination";
 
 export {
   InputField,
@@ -27,4 +28,5 @@ export {
   useSuccessAlert,
   Modal,
   Hamburger,
+  Pagination,
 };

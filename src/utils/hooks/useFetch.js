@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import axios from "axios";
 
 const useFetch = () => {
@@ -6,7 +6,7 @@ const useFetch = () => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
-  const handleFetch = async (method = "get", url, body, config) => {
+  const handleFetch = useCallback(async (method = "get", url, body, config) => {
     setLoading(true);
 
     try {
@@ -19,10 +19,10 @@ const useFetch = () => {
       setData(res.data);
       setLoading(false);
     } catch (error) {
-      setError(error.message);
+      setError(error);
       setLoading(false);
     }
-  };
+  }, []);
 
   return {
     loading,
