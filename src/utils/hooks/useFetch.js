@@ -6,7 +6,7 @@ const useFetch = () => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
-  const handleFetch = useCallback(async (method = "get", url, body, config) => {
+  const handleFetch = useCallback(async (url, method = "get", body, config) => {
     setLoading(true);
 
     try {
