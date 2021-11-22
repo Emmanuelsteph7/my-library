@@ -1,10 +1,8 @@
 import { useState } from "react";
 
-const usePagination = ({ initialPageNumber, postsPerPage, data }) => {
-  const [currentPage, setCurrentPage] = useState(
-    initialPageNumber ? initialPageNumber : 1
-  );
-  const [numOfPagePosts] = useState(postsPerPage ? postsPerPage : 10);
+const usePagination = (data, initialPageNumber = 1, postsPerPage = 10) => {
+  const [currentPage, setCurrentPage] = useState(initialPageNumber);
+  const [numOfPagePosts] = useState(postsPerPage);
 
   const indexOfLastPost = currentPage * numOfPagePosts;
   const indexOfFirstPost = indexOfLastPost - numOfPagePosts;

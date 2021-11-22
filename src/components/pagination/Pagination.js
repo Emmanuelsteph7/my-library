@@ -1,21 +1,33 @@
-import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
+import { useEffect } from "react";
 import "./pagination.scss";
-
-// for how to use this component, check src/layouts/dashboard/projects/allProjects/components/allprojectsSection/AllProjectsSection.js
 
 const Pagination = ({
   currentPage,
   currentPageFunc,
   dataLength,
   postsPerPage,
+  displayedBtns = 5,
 }) => {
   const pageNumbers = [];
+  const mappedBtnsNumbers = [];
 
   let highestNumber = Math.ceil(dataLength / postsPerPage);
 
   for (let i = 1; i <= highestNumber; i++) {
     pageNumbers.push(i);
   }
+
+  useEffect(() => {
+    let paginationIcons = document.querySelectorAll(".pagination__page");
+
+    for (let i = 0; i < paginationIcons.length; i++) {
+      paginationIcons[i].classList.remove("active");
+
+      if (Number(paginationIcons[i].innerHTML) === currentPage) {
+        paginationIcons[i].classList.add("active");
+      }
+    }
+  }, [currentPage]);
 
   const handlePagination = (e, pageNumber) => {
     currentPageFunc(pageNumber);
@@ -63,19 +75,47 @@ const Pagination = ({
     }
   };
 
+  const handlePaginate = (num) => {
+    currentPageFunc(num);
+  };
+
+  let maxLeft = currentPage - Math.floor(displayedBtns / 2);
+  let maxRight = currentPage + Math.floor(displayedBtns / 2);
+
+  if (maxLeft < 1) {
+    maxLeft = 1;
+    maxRight = displayedBtns;
+  }
+
+  if (maxRight > highestNumber) {
+    maxRight = highestNumber;
+
+    maxLeft = highestNumber - (displayedBtns - 1);
+
+    if (maxLeft < 1) {
+      maxLeft = 1;
+    }
+  }
+
+  for (let i = maxLeft; i <= maxRight; i++) {
+    mappedBtnsNumbers.push(i);
+  }
+
   return (
     <div className="pagination">
+      <div className="pagination__prev" onClick={() => handlePaginate(1)}>
+        <span className="pagination__nextText">First</span>
+      </div>
       <div className="pagination__prev" onClick={prevPagination}>
-        <BsArrowLeft />
         <span className="pagination__nextText">Prev</span>
       </div>
-      {pageNumbers !== undefined &&
-        pageNumbers.map((number) => {
+      {mappedBtnsNumbers !== undefined &&
+        mappedBtnsNumbers.map((number) => {
           return (
             <div
               onClick={(e) => handlePagination(e, number)}
               key={number}
-              className={`pagination__page ${number === 1 ? "active" : ""} `}
+              className={`pagination__page  `}
               datanumber={number}
             >
               {number}
@@ -84,21 +124,13 @@ const Pagination = ({
         })}
       <div className="pagination__next" onClick={nextPagination}>
         <span className="pagination__nextText">Next</span>
-        <BsArrowRight />
       </div>
-      {/* {dot ? null : (
-        <>
-          <div className="pagination__dot"></div>
-          <div className="pagination__dot"></div>
-          <div className="pagination__dot"></div>
-          <div className="pagination__dot"></div>
-          <div className="pagination__dot"></div>
-          <div className="pagination__next" onClick={nextPagination}>
-            <BsArrowRight />
-            <span className="pagination__nextText">Next</span>
-          </div>
-        </>
-      )} */}
+      <div
+        className="pagination__next"
+        onClick={() => handlePaginate(highestNumber)}
+      >
+        <span className="pagination__nextText">Last</span>
+      </div>
     </div>
   );
 };

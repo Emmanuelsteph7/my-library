@@ -22,7 +22,8 @@ Start: Styles for pagination component
 
     &.active {
       // color: $deepBlue;
-      background-color: rgba(0, 76, 255, 0.1);
+      background-color: red;
+      color: white;
     }
 
     &.dot {
@@ -50,40 +51,29 @@ Start: Styles for pagination component
     background-color: #455a64;
   }
 
-  .pagination__next {
+  .pagination__next,
+  .pagination__prev {
     display: flex;
     position: relative;
     align-items: center;
     margin-left: 10px;
     cursor: pointer;
     transition: 0.4s;
-
-    &:hover {
-      transform: translateX(10px);
-
-      svg {
-        // color: $deepBlue;
-      }
-
-      .pagination__nextText {
-        opacity: 1;
-        // color: $deepBlue;
-      }
-    }
-
-    svg {
-      font-size: 1.8rem;
-    }
   }
 
-  .pagination__nextText {
-    position: absolute;
-    bottom: -10px;
-    font-size: 0.8rem;
-    left: 3px;
-    opacity: 0;
-    transition: 0.4s;
+  .pagination__prev {
+    margin-left: 0;
+    margin-right: 10px;
   }
+
+  // .pagination__nextText {
+  //   position: absolute;
+  //   bottom: -10px;
+  //   font-size: 0.8rem;
+  //   left: 3px;
+  //   opacity: 0;
+  //   transition: 0.4s;
+  // }
 }
 /**************************************
 End: Styles for pagination component

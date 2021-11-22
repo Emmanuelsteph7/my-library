@@ -7,12 +7,10 @@ const App = () => {
   const { handleFetch, loading, data } = useFetch();
 
   const { slicedPosts, currentPage, setCurrentPage, numOfPagePosts } =
-    usePagination({
-      data,
-    });
+    usePagination(data);
 
   useEffect(() => {
-    handleFetch("get", "https://jsonplaceholder.typicode.com/posts");
+    handleFetch("https://jsonplaceholder.typicode.com/posts");
   }, [handleFetch]);
 
   return (
