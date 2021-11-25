@@ -1,5 +1,4 @@
 import ReactPlayer from "react-player";
-import vid from "./vid.mp4";
 import {
   AiFillHeart,
   AiOutlineForward,

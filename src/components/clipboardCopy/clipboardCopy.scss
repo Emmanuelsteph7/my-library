@@ -1,0 +1,22 @@
+.clipboardCopy {
+  .clipboardCopy__input {
+    display: none;
+  }
+
+  .clipboardCopy__btn {
+    border: 1px solid tomato;
+    outline: none;
+    background-color: #ff634793;
+    padding: 10px 30px;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(#ff634893, 20%);
+    }
+  }
+
+  .clipboardCopy__btnText {
+    color: white;
+  }
+}

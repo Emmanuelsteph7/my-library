@@ -13,6 +13,7 @@ import AlertProvider, {
 import Modal from "./modal/Modal";
 import Hamburger from "./hamburger/Hamburger";
 import Pagination from "./pagination/Pagination";
+import ClipboardCopy from "./clipboardCopy/ClipboardCopy";
 
 export {
   InputField,
@@ -29,4 +30,5 @@ export {
   Modal,
   Hamburger,
   Pagination,
+  ClipboardCopy,
 };

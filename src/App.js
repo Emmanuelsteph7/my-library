@@ -1,19 +1,5 @@
-import { useEffect } from "react";
-import { Pagination } from "./components";
-import VideoPlayer from "./components/videoPlayer/VideoPlayer";
-import { useFetch } from "./utils";
-import usePagination from "./utils/hooks/usePagination";
-
+import { ClipboardCopy } from "./components";
 const App = () => {
-  // const { handleFetch, loading, data } = useFetch();
-
-  // const { slicedPosts, currentPage, setCurrentPage, numOfPagePosts } =
-  //   usePagination(data);
-
-  // useEffect(() => {
-  //   handleFetch("https://jsonplaceholder.typicode.com/posts");
-  // }, [handleFetch]);
-
   return (
     <div
       className="App"
@@ -21,7 +7,7 @@ const App = () => {
         height: "100vh",
       }}
     >
-      <VideoPlayer />
+      <ClipboardCopy copyText="Mancity rocks" />
     </div>
   );
 };
