@@ -1,17 +1,18 @@
 import { useEffect } from "react";
 import { Pagination } from "./components";
+import VideoPlayer from "./components/videoPlayer/VideoPlayer";
 import { useFetch } from "./utils";
 import usePagination from "./utils/hooks/usePagination";
 
 const App = () => {
-  const { handleFetch, loading, data } = useFetch();
+  // const { handleFetch, loading, data } = useFetch();
 
-  const { slicedPosts, currentPage, setCurrentPage, numOfPagePosts } =
-    usePagination(data);
+  // const { slicedPosts, currentPage, setCurrentPage, numOfPagePosts } =
+  //   usePagination(data);
 
-  useEffect(() => {
-    handleFetch("https://jsonplaceholder.typicode.com/posts");
-  }, [handleFetch]);
+  // useEffect(() => {
+  //   handleFetch("https://jsonplaceholder.typicode.com/posts");
+  // }, [handleFetch]);
 
   return (
     <div
@@ -20,25 +21,7 @@ const App = () => {
         height: "100vh",
       }}
     >
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        <>
-          {slicedPosts &&
-            slicedPosts.map((item) => (
-              <div key={item.id}>
-                <h1>{item.title}</h1>
-                <p>{item.body}</p>
-              </div>
-            ))}
-          <Pagination
-            currentPage={currentPage}
-            currentPageFunc={setCurrentPage}
-            dataLength={data?.length}
-            postsPerPage={numOfPagePosts}
-          />
-        </>
-      )}
+      <VideoPlayer />
     </div>
   );
 };

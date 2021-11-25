@@ -1,0 +1,171 @@
+.videoPlayer {
+  width: 700px;
+  height: 400px;
+  margin: auto;
+  position: relative;
+  background-color: black;
+  border-radius: 30px;
+  overflow: hidden;
+
+  .videoPlayer__control {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 0;
+    z-index: 2;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .videoPlayer__toggleBtns {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+    svg {
+      margin: 0 10px;
+      font-size: 1.3rem;
+      color: white;
+      cursor: pointer;
+    }
+  }
+
+  .videoPlayer__icon {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 30px;
+
+    svg {
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+    }
+  }
+
+  .videoPlayer__bottom {
+    padding: 20px 30px;
+  }
+
+  .videoPlayer__videoDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .videoPlayer__slider {
+    // margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .videoPlayer__currentTime {
+    color: white;
+    margin-right: 10px;
+  }
+
+  .videoPlayer__totalTime {
+    color: white;
+    margin-left: 10px;
+  }
+
+  .videoPlayer__controlDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .videoPlayer__controlsSocial {
+    display: flex;
+    align-items: center;
+
+    .videoPlayer__controlsItem {
+      margin-right: 25px;
+
+      svg {
+        color: white;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .videoPlayer__controlsToggle {
+    display: flex;
+    align-items: center;
+
+    .videoPlayer__controlsItem {
+      margin-left: 25px;
+
+      svg {
+        color: white;
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .videoPlayer__controlsItem {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .videoPlayer__controlsCount {
+    color: white;
+    margin-left: 5px;
+  }
+
+  .videoPlayer__sliderCont {
+    flex: 1;
+    position: relative;
+    background-color: green;
+    height: fit-content;
+    display: flex;
+  }
+
+  .videoPlayer__elapsed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background-color: black;
+  }
+
+  .videoPlayer__sliderInput {
+    flex: 1;
+    height: 3px;
+    width: 100%;
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+
+    &::-webkit-slider-thumb {
+      // display: none;
+      -webkit-appearance: none;
+      border: 1px solid #000000;
+      height: 7px;
+      width: 16px;
+      border-radius: 3px;
+      background: black;
+      cursor: pointer;
+      // margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+      box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+    }
+  }
+
+  .videoPlayer__volumeSlider {
+    .videoPlayer__sliderInput {
+      width: 80px;
+    }
+  }
+}
