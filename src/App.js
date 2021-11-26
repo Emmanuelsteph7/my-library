@@ -7,7 +7,7 @@ const App = () => {
         height: "100vh",
       }}
     >
-      <ClipboardCopy copyText="Mancity rocks" />
+      <ClipboardCopy copyText="Mancity always rocks" />
     </div>
   );
 };
