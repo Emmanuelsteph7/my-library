@@ -11,8 +11,7 @@ const App = () => {
         justifyContent: "center",
       }}
     >
-      <MyButton text="Btn 1" />
-      <MyButton.Yellow text="Btn 1" />
+      <ClipboardCopy copyText="Mancity always rocks" />
     </div>
   );
 };
