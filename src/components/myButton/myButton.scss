@@ -1,0 +1,13 @@
+.myBtn {
+  border: 1px solid green;
+  background-color: lighten(green, 20%);
+  color: white;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.myBtn--yellow {
+  @extend .myBtn;
+
+  background-color: darken(yellow, 20%);
+}
