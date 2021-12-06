@@ -15,6 +15,7 @@ import Hamburger from "./hamburger/Hamburger";
 import Pagination from "./pagination/Pagination";
 import ClipboardCopy from "./clipboardCopy/ClipboardCopy";
 import FormInput from "./formInput/FormInput";
+import Text from "./text/Text";
 
 export {
   InputField,
@@ -33,4 +34,5 @@ export {
   Pagination,
   ClipboardCopy,
   FormInput,
+  Text,
 };

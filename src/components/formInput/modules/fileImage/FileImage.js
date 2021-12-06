@@ -3,8 +3,6 @@ import { FiUpload } from "react-icons/fi";
 import "./fileImage.scss";
 
 const FileImage = ({ label, name, id, onChange, value }) => {
-  const [isFileLoading, setIsFileLoading] = useState(false);
-  // const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState("");
 
   useEffect(() => {
@@ -20,16 +18,6 @@ const FileImage = ({ label, name, id, onChange, value }) => {
       setImagePreview(null);
     }
   }, [value]);
-
-  // const handleFile = (e) => {
-  //   const file = e.target.files[0];
-
-  //   if (file && file.type.startsWith("image")) {
-  //     setImage(file);
-  //   } else {
-  //     setImage(null);
-  //   }
-  // };
 
   return (
     <>
@@ -47,14 +35,16 @@ const FileImage = ({ label, name, id, onChange, value }) => {
         <input
           className="fileImage__input"
           type="file"
-          // accept="image/*"
+          accept="image/*"
           name={name}
           id={id}
           onChange={onChange}
         />
-        <div className="fileImage__preview">
-          <img src={imagePreview} alt="" />
-        </div>
+        {imagePreview && (
+          <div className="fileImage__preview">
+            <img src={imagePreview} alt="" />
+          </div>
+        )}
       </div>
     </>
   );

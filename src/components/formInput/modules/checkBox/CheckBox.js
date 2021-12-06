@@ -1,6 +1,6 @@
 import "./checkBox.scss";
 
-const CheckBox = ({ value, onChange, label, id, name, disabled }) => {
+const CheckBox = ({ value, onChange, label, id, name, disabled, msg }) => {
   const handleChange = (e) => {
     if (onChange) return onChange(e);
 
@@ -21,6 +21,9 @@ const CheckBox = ({ value, onChange, label, id, name, disabled }) => {
       <label htmlFor={id} className="checkbox__label">
         {label}
       </label>
+      <div className="checkbox__msgDiv">
+        <span className="checkbox__msg">{msg}</span>
+      </div>
     </div>
   );
 };

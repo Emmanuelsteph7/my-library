@@ -61,15 +61,46 @@
     display: none;
   }
 
+  // .fileImage__preview {
+  //   width: 70px;
+  //   height: 70px;
+  //   border-radius: 10px;
+  //   overflow: hidden;
+
+  //   img {
+  //     object-fit: cover;
+  //     width: 100%;
+  //   }
+  // }
+
   .fileImage__preview {
+    display: flex;
+    flex-wrap: wrap;
+
+    img {
+      width: 70px;
+      height: 70px;
+      margin-right: 10px;
+    }
+  }
+
+  .fileImage__previewImg {
     width: 70px;
     height: 70px;
-    border-radius: 10px;
+    margin-right: 10px;
     overflow: hidden;
+    position: relative;
 
     img {
       object-fit: cover;
       width: 100%;
     }
+  }
+
+  .fileImage__closeIcon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
   }
 }

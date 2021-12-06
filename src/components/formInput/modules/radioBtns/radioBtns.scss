@@ -1,0 +1,40 @@
+.radioBtns {
+  .radioBtns__radioDiv {
+    display: flex;
+    align-items: center;
+  }
+
+  .radioBtns__input {
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+    position: relative;
+    cursor: pointer;
+
+    &:checked {
+      &:before {
+        background-color: rgb(28, 101, 209);
+      }
+    }
+
+    &:before {
+      position: absolute;
+      width: 70%;
+      height: 70%;
+      top: 50%;
+      left: 50%;
+      content: "";
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: transparent;
+      transition: 0.2s;
+    }
+  }
+
+  .radioBtns__label {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}

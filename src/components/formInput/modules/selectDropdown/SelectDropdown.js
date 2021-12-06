@@ -1,4 +1,3 @@
-// import { Triangle2 } from "assets/index";
 import { useState, useEffect } from "react";
 import { BiSearch } from "react-icons/bi";
 import { TiArrowSortedDown } from "react-icons/ti";

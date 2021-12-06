@@ -11,6 +11,7 @@ const TextArea = ({
   cols = 20,
   rows = 5,
   required,
+  msg,
 }) => {
   const handleChange = (e) => {
     if (onChange) return onChange(e);
@@ -37,6 +38,7 @@ const TextArea = ({
         rows={rows}
         required={required}
       />
+      <span className="textarea__msg">{msg}</span>
     </div>
   );
 };
