@@ -14,6 +14,7 @@ import Modal from "./modal/Modal";
 import Hamburger from "./hamburger/Hamburger";
 import Pagination from "./pagination/Pagination";
 import ClipboardCopy from "./clipboardCopy/ClipboardCopy";
+import FormInput from "./formInput/FormInput";
 
 export {
   InputField,
@@ -31,4 +32,5 @@ export {
   Hamburger,
   Pagination,
   ClipboardCopy,
+  FormInput,
 };
